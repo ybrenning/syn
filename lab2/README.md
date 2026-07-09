@@ -14,17 +14,13 @@ stmt -> VAR = VAR + INT
       | IF ( VAR != INT ) { program } ELSE { program }
 ```
 
-where `VAR` matches `x\d+` (the variable index is folded into the token) and
-`INT` matches `-?\d+` (a leading `-` is folded in, so a summand may be negative).
+where `VAR` matches `x\d+` (the variable index is folded into the token) and `INT` matches `-?\d+` (a leading `-` is folded in, so a summand may be negative).
 
-The condition is always of the form `VAR != INT`, as required by the "While
-programs" definition.
+The condition is always of the form `VAR != INT`, as required by the "While programs" definition.
 
 I also allow a trailing separator (semicolon), since it felt more natural and similar to semicolon-based programming languages. This means a program can end with a semicolon or have to semicolons after each other, for example.
 
 Also, I allow the first term of a sum to be a constant integer, as opposed to only variables. This just seemed like a natural/easy extension of the base grammar. Something like x0 = 1 + 1 should work instead of necessitating a helper variable.
-
-  `x0 = 5 + -5` parse directly instead of forcing a helper variable.
 
 I used PLY which lets me define lexer and parser within the same file. I stay with Python since it is the simplest option, the library's example was well-documented (https://www.dabeaz.com/ply/ply.html), and I already used the language in the previous task.
 
