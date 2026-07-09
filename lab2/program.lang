@@ -1,0 +1,14 @@
+x0 = 1 + -5 ;
+x1 = x0 + 3 ;
+// MY COMMENT
+WHILE(x0 != 0) {
+    x1 = x1 + 1 ;
+    IF(x2 != 0) { x2 = x2 + -1 ; }
+    ELSE { x3 = x3 + 0 ; }
+} ;
+/* 
+MY
+BLOCK
+COMMENT
+*/
+// x4 = x0 + 2 ;
